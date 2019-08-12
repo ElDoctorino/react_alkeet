@@ -1,13 +1,18 @@
 import React from 'react';
 import '../App.css';
 
-const Course = () => {
+const Course = (props) => {
     return (
     <div>
-        <h3>REACT-Ensimmäinen tunti</h3>
+        <h3> {props.partName} </h3>
+        <h4> {props.partDate} </h4>
+
       <ul>
-          <li>DOM</li>
+        {props.partContents.map(x => <li> {x} </li>)}
         </ul>
+        <p>{props.partNimi}  {props.partKokonimi} </p>
+        <p>{props.partSähkö} {props.partKokoSähkö} </p>
+        <p>{props.partLinked} {props.partKokoLinked} </p>
     </div>
   )
 }
